@@ -2,7 +2,7 @@ class CreateAssociations < ActiveRecord::Migration
   def change
     create_table :associations do |t|
 
-      t.text :description
+      t.text :plot
       t.integer :book_id
       t.integer :repeater_id
 
