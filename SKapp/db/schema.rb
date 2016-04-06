@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160402210528) do
   enable_extension "plpgsql"
 
   create_table "associations", force: :cascade do |t|
-    t.text     "description"
+    t.text     "plot"
     t.integer  "book_id"
     t.integer  "repeater_id"
     t.datetime "created_at",  null: false
