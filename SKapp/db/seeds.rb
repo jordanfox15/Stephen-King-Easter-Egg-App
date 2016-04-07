@@ -44,6 +44,40 @@ book = Book.create([title: 'The Dead Zone', published_date: Date.parse('1/8/1979
 # book[0].repeaters << repeater_d
 # book[0].repeaters << repeater_f
 
+book = Book.create([title: 'The Dark Tower: The Gunslinger', published_date: Date.parse('10/6/1982'), synopsis: 'As the opening novel in the seven book Dark Tower Series, we are introduced to the primary protagonist Roland Deschain, aka The Gunslinger.  We follow him as he crosses a seemingly endless desert in pursuit of the enigmatic Man in Black.'])
+
+repeater_g = Repeater.create([name: 'Roland Deschain', category: 'character', description: 'The last of the Gunslingers, an ancient group of peace keeping knights from the line of Eld, Roland wields his twin revolvers with preternatural speed and precision, and is single minded in his pursuit of The Dark Tower.'])
+
+repeater_h = Repeater.create([name: 'Jake Chambers', category: 'character', description: 'A young boy of ten or eleven, Jake grew up in Manhattan yet inexplicably finds himself in Mid-World, a companion to the Gunslinger.'])
+
+repeater_i = Repeater.create([name: 'Mid-World', category: 'location', description: 'The fictional setting of most of the Dark Tower Series and home to protagonist Roland Deschain, Mid-World is seen to be an alternate version of Earth.  Having technology that was once more advanced than our own, \'the world has moved on\' resulting in a devolved society, where civilization can be found at all.  Mid-World is also a place where time and space are constantly in flux.'])
+
+repeater_j = Repeater.create([name: 'New York City', category: 'location', description: 'New York is the origin of several of the characters and an often visited setting in the Dark Tower Series.'])
+
+book[0].repeaters << repeater_c
+book[0].repeaters << repeater_g
+book[0].repeaters << repeater_h
+book[0].repeaters << repeater_i
+book[0].repeaters << repeater_j
+
+book[0].associations[0].update_attributes(plot: 'Only seen and referred to as The Man in Black, or Walter, it is only much later that we learn these two are the same being.  In The Gunslinger, protagonist Roland pursues him throughout the novel, only catching up to and speaking to him in the very end.')
+
+book[0].associations[1].update_attributes(plot: 'First introduced in this novel, we meet a single minded and dispassionate individual as he chases The Man in Black across the desert in his seemingly endless quest for The Dark Tower.')
+
+book[0].associations[2].update_attributes(plot: 'Jake is a young boy, who after an unfortunate event in Manhattan, inexplicably finds himself in the path of the Gunslinger in his trip across the desert.  Becoming, for a time, the first of Roland\'s companions, Jake is both a distraction and a test in Walter\'s attempt to dissuade Roland from continuing his quest for The Dark Tower.')
+
+book[0].associations[3].update_attributes(plot: 'The setting for the entire novel, our first visit to Mid-World is marked by sparse settings and few people where we learn for the first time what this alternate world is like.')
+
+book[0].associations[4].update_attributes(plot: 'Only mentioned in the story of the origin of Jake Chambers, New York plays a very small role in this novel.')
+
+book = Book.create([title: 'Christine', published_date: Date.parse('29/4/1983'), synopsis: 'A red and white 1958 Plymouth Fury possessed by the antagonistic spirit of an old man is purchased by a troubled teenager.  The two become involved in a co-dependent and murderous relationship as Christine affects everyone around it.'])
+
+book = Book.create([title: 'The Talisman', published_date: Date.parse('8/11/1984'), co_author: 'Peter Straub', synopsis: 'A young boy of 12 sets out on a quest to save his mother by making a cross-country trip from New Hampshire to California.  Along the way he is introduced to \'flipping\', or moving to an alternate dimension known as the Territories where almost everyone and everything is represented in a similar yet altered fashion.'])
+
+book[0].repeaters << repeater_i
+
+book[0].associations[0].update_attributes(plot: 'Mentioned only as \'the Territories\', it is only in the sequel \'Black House\' that this alternate universe and Mid-World are revealed to be one in the same.  In this novel \'the Territories\' is a smaller and less technologically advanced version of the United States that the hero travels to and from in his attempt to save his mother.')
+
 
 
 
