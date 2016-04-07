@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :books
   resources :repeaters
+  get 'characters', to: 'repeaters#characters'
+  get 'locations', to: 'repeaters#locations'
+
   resources :associations
 
   # Example of regular route:

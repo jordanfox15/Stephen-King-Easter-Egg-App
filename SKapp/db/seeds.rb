@@ -22,20 +22,18 @@ book = Book.create([title: 'The Stand', published_date: Date.parse('1/9/1978'), 
 
 # repeater_b = Repeater.create([name: 'Las Vegas, Nevada', category: 'Location', description: 'The gathering place and start of a new tyrannical society led by Randall Flagg.'])
 
-repeater_c = Repeater.create([name: 'Randall Flagg', category: 'Character', description: 'A supernatural and evil being, he is not quite human.  He takes many names and faces in his travels throughout the Stephen King universe.'])
+repeater_c = Repeater.create([name: 'Randall Flagg', category: 'character', description: 'A supernatural and evil being, he is not quite human.  He takes many names and faces in his travels throughout the Stephen King universe.'])
 
-repeater_e = Repeater.create([name: 'The Shop', category: 'Character', description: 'Officially known as the U.S. Department of Scientific Intelligence, this top secret government agency pursues its goals with a disregard for morality or law.'])
+repeater_e = Repeater.create([name: 'The Shop', category: 'character', description: 'Officially known as the U.S. Department of Scientific Intelligence, this top secret government agency pursues its goals with a disregard for morality or law.'])
 
 # book[0].repeaters << repeater_a
 # book[0].repeaters << repeater_b
 book[0].repeaters << repeater_c
 book[0].repeaters << repeater_e
 
-book[0].associations[0].plot = "In his first appearance in the Stephen King universe, Flagg takes on the role of the leader of a new society after the fall of modern civilization.  Located in Las Vegas, Flagg rules with an iron fist, attracting followers drawn to violence and descruction."
-book[0].associations[0].save
+book[0].associations[0].update_attributes(plot: "In his first appearance in the Stephen King universe, Flagg takes on the role of the leader of a new society after the fall of modern civilization.  Located in Las Vegas, Flagg rules with an iron fist, attracting followers drawn to violence and descruction.")
 
 book[0].associations[1].update_attributes(plot: "In The Stand, The Shop was tasked with stopping the superflu viral outbreak before it kills most of humanity, which it completely fails in.")
-# book[0].associations[1].save
 
 book = Book.create([title: 'The Dead Zone', published_date: Date.parse('1/8/1979'), synopsis: 'Upon waking from a five year coma, protagonist John Smith finds he has psychic abilities that lead to an apocalyptic vision of a politicians future.'])
 
