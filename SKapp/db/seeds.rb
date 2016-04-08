@@ -78,6 +78,14 @@ book[0].repeaters << repeater_i
 
 book[0].associations[0].update_attributes(plot: 'Mentioned only as \'the Territories\', it is only in the sequel \'Black House\' that this alternate universe and Mid-World are revealed to be one in the same.  In this novel \'the Territories\' is a smaller and less technologically advanced version of the United States that the hero travels to and from in his attempt to save his mother.')
 
+book = Book.create([title: 'It', published_date: Date.parse('15/9/1986'), synopsis: 'Told through alternating time periods set approximately 30 years apart, \'It\' tells the story of a group of friends who must discover the truth and then ultimately destroy a demonic shape-shifting entity who murders and devours mostly children in a small town in Maine.'])
+
+repeater_k = Repeater.create([name: 'Derry, Maine', category: 'location', description: 'A small, fictional town in Maine, Derry is the setting of several of King\'s novels.'])
+
+book[0].repeaters << repeater_k
+
+book[0].associations[0].update_attributes(plot: 'In the novel \'It\', Derry is the home and hunting ground of the titular demonic entity. Derry is also home to the group of seven childhood friends who must confront him as children, and then must return 27 years later to ultimately kill \'it\'.')
+
 
 
 
