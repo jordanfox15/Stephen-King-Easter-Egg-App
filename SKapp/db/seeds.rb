@@ -18,7 +18,7 @@ book = Book.create([title: 'The Shining', published_date: Date.parse('17/10/1977
 
 book = Book.create([title: 'The Stand', published_date: Date.parse('1/9/1978'), synopsis: 'In a post-apocalyptic U.S. two leaders with supernatural powers appear and create differing societies, one good and one evil.'])
 
-# repeater_a = Repeater.create([name: 'Boulder, Colorado', category: 'Location', description: 'The gathering place and start of a new democratic society called the Free Zone.'])
+repeater_a = Repeater.create([name: 'Boulder, Colorado', category: 'location', description: 'A medium sized city sitting at the base of the Rocky Mountains, Boulder appears in a few of King\'s books.'])
 
 # repeater_b = Repeater.create([name: 'Las Vegas, Nevada', category: 'Location', description: 'The gathering place and start of a new tyrannical society led by Randall Flagg.'])
 
@@ -26,23 +26,27 @@ repeater_c = Repeater.create([name: 'Randall Flagg', category: 'character', desc
 
 repeater_e = Repeater.create([name: 'The Shop', category: 'character', description: 'Officially known as the U.S. Department of Scientific Intelligence, this top secret government agency pursues its goals with a disregard for morality or law.'])
 
-# book[0].repeaters << repeater_a
+book[0].repeaters << repeater_a
 # book[0].repeaters << repeater_b
 book[0].repeaters << repeater_c
 book[0].repeaters << repeater_e
 
-book[0].associations[0].update_attributes(plot: "In his first appearance in the Stephen King universe, Flagg takes on the role of the leader of a new society after the fall of modern civilization.  Located in Las Vegas, Flagg rules with an iron fist, attracting followers drawn to violence and descruction.")
+book[0].associations[0].update_attributes(plot: 'The gathering place and start of a new democratic society called the Free Zone, Boulder is home to the protagonists of the novel.  Led there by visions of Mother Abagail, the city is the foil for the other, less enlightened society in Las Vegas.')
 
-book[0].associations[1].update_attributes(plot: "In The Stand, The Shop was tasked with stopping the superflu viral outbreak before it kills most of humanity, which it completely fails in.")
+book[0].associations[1].update_attributes(plot: "In his first appearance in the Stephen King universe, Flagg takes on the role of the leader of a new society after the fall of modern civilization.  Located in Las Vegas, Flagg rules with an iron fist, attracting followers drawn to violence and descruction.")
+
+book[0].associations[2].update_attributes(plot: "In The Stand, The Shop was tasked with stopping the superflu viral outbreak before it kills most of humanity, which it completely fails in.")
 
 book = Book.create([title: 'The Dead Zone', published_date: Date.parse('1/8/1979'), synopsis: 'Upon waking from a five year coma, protagonist John Smith finds he has psychic abilities that lead to an apocalyptic vision of a politicians future.'])
 
-# repeater_d = Repeater.create([name: '?Eastern Maine?', category: 'Location', description: 'The hometown of John Smith, psychic protagonist of the Dead Zone.'])
+repeater_d = Repeater.create([name: 'Castle Rock, Maine', category: 'location', description: 'Castle Rock is one of a trio of fictional Maine towns that are home to a number of King\'s works.'])
 
 # repeater_f = Repeater.create([name: 'Pheonix, Arizona', category: 'Location', description: 'The setting of the climax of The Dead Zone.'])
 
-# book[0].repeaters << repeater_d
+book[0].repeaters << repeater_d
 # book[0].repeaters << repeater_f
+
+book[0].associations[0].update_attributes(plot: 'Castle Rock is the hometown of John Smith, psychic protagonist of the Dead Zone, and setting for much of the novel.')
 
 book = Book.create([title: 'The Dark Tower: The Gunslinger', published_date: Date.parse('10/6/1982'), synopsis: 'As the opening novel in the seven book Dark Tower Series, we are introduced to the primary protagonist Roland Deschain, aka The Gunslinger.  We follow him as he crosses a seemingly endless desert in pursuit of the enigmatic Man in Black.'])
 
@@ -85,6 +89,91 @@ repeater_k = Repeater.create([name: 'Derry, Maine', category: 'location', descri
 book[0].repeaters << repeater_k
 
 book[0].associations[0].update_attributes(plot: 'In the novel \'It\', Derry is the home and hunting ground of the titular demonic entity. Derry is also home to the group of seven childhood friends who must confront him as children, and then must return 27 years later to ultimately kill \'it\'.')
+
+book = Book.create([title: 'The Dark Tower II: The Drawing of the Three', published_date: Date.parse('1/5/1987'), synopsis: 'After finally catching the Man in Black and meeting with him over a single seemingly endless night, the Gunslinger continues his journey as he visits New York gathering new companions to join him on his quest.'])
+
+repeater_l = Repeater.create([name: 'Eddie Dean', category: 'character', description: 'Beginning as a heroin junkie from Brooklyn in the 80\'s, Eddie Dean becomes a resident of Mid-World and a member of Roland Deschain\'s Ka-tet, where he learns the ways of a gunslinger and joins in the quest for the Dark Tower.'])
+
+repeater_m = Repeater.create([name: 'Susannah Dean', category: 'character', description: 'Having lost her legs just above the knee in a subway accident, Susannah suffered from dissociative identity disorder until Roland is able to make her two personalities confront one another and merge into one.  After she is trained as a gunslinger and joins in his quest for the Dark Tower.'])
+
+book[0].repeaters << repeater_g
+book[0].repeaters << repeater_i
+book[0].repeaters << repeater_j
+book[0].repeaters << repeater_l
+book[0].repeaters << repeater_m
+
+book[0].associations[0].update_attributes(plot: 'In the second volume of the series, Roland continues his journey for the Dark Tower as he travels along the coast and comes upon three doors as foretold during his meeting with the Man in Black.  Behind each door he encounters a different time period of modern New York City where he must find and help some new companions as well as himself.')
+
+book[0].associations[1].update_attributes(plot: 'In this novel the setting is split between the western coast of Mid-World and New York.  The only thing we see of Mid-World is a long trek down the coast as Roland searches for three doors sitting in mid-air.')
+
+book[0].associations[2].update_attributes(plot: 'The setting for at least half the novel, New York City is the home of three new characters Roland must interact with, each behind a different door acting as a portal from Mid-World.')
+
+book[0].associations[3].update_attributes(plot: 'In his first appearance in the series, Eddie is a broken down junkie in serious trouble with a group of criminals.  Roland must help Eddie through his problems and draw him into Mid-World where his life changes forever.')
+
+book[0].associations[4].update_attributes(plot: 'In her first appearance in the series, Susannah is two different people, Detta and O\'detta.  Roland must force the two personalities to confront each other and merge to become Susannah, at which point she joins him in his quest.')
+
+book = Book.create([title: 'Misery', published_date: Date.parse('8/6/1987'), synopsis: 'A writer is rescued from a horrible car accident by a one-time nurse who is also his biggest fan.  Unfortunately she is mentally disturbed and is intent on keeping him prisoner until he brings her favorite character back to life.'])
+
+book[0].repeaters << repeater_a
+
+book[0].associations[0].update_attributes(plot: 'Boulder is the setting for the very beginning of the novel where protagonist Paul Sheldon has just finished his latest novel.  It is also referenced later as the home of the hospital where antagonist Annie Wilkes previously worked.')
+
+book = Book.create([title: 'The Tommyknockers', published_date: Date.parse('10/11/1987'), synopsis: 'When an alien spacecraft is unearthed in the woods near a small town, the residents slowly begin to change for the worse as the ship exerts its influence on them.'])
+
+repeater_n = Repeater.create([name: 'Haven, Maine', category: 'location', description: 'A small fictional town in Maine, Haven is the setting for several of King\'s works.'])
+
+book[0].repeaters << repeater_e
+book[0].repeaters << repeater_n
+
+book[0].associations[0].update_attributes(plot: 'Making only a small appearance at the end of the novel, The Shop is one of the government agencies who arrive in Haven after the alien craft is launched back into outer space.  Once there they contain or kill the altered Havenites as well as collect the strange and advanced inventions they have created.')
+
+book[0].associations[1].update_attributes(plot: 'Haven is the setting for this novel.  The spacecraft is found in the woods outside of town and begins to affect the residents.')
+
+book = Book.create([title: 'The Dark Half', published_date: Date.parse('20/10/1989'), synopsis: 'A small town writer puts an end to his pen name, under which he has achieved much success.  However the alter ego arises from the mock grave and goes on a killing spree, throwing the writer\'s life into disarray.'])
+
+repeater_o = Repeater.create([name: 'Sheriff Alan Pangborn', category: 'character', description: 'Alan Pangborn is the sheriff of Castle Rock, a small fictional town in Maine.'])
+
+book[0].repeaters << repeater_d
+book[0].repeaters << repeater_o
+
+book[0].associations[0].update_attributes(plot: 'Castle Rock appears in The Dark Half as a neighboring town to the protagonists home, and is home itself to the sheriff who investigates the murders surrounding the main character.')
+
+book[0].associations[1].update_attributes(plot: 'In The Dark Half, Sheriff Pangborn investigates the murders committed by the protagonist\'s alter-ego, believing the writer himself must be guilty.')
+
+book = Book.create([title: 'The Dark Tower III: The Waste Lands', published_date: Date.parse('1/8/1991'), synopsis: 'In the third volume of The Dark Tower series, now companions Roland, Eddie and Susannah begin their journey in earnest.  Following the path of \'the beam\', Roland is reunited with the boy he betrayed, and the ka-tet must brave the violent city of Lud, and risk a ride aboard the insane artificial intelligence known as Blaine the Mono.'])
+
+book[0].repeaters << repeater_g
+book[0].repeaters << repeater_h
+book[0].repeaters << repeater_l
+book[0].repeaters << repeater_m
+book[0].repeaters << repeater_c
+book[0].repeaters << repeater_i
+book[0].repeaters << repeater_j
+
+book[0].associations[0].update_attributes(plot: 'As he and his new companions begin the long journey to The Dark Tower, Roland begins to train Eddie and Susannah to become gunslingers.  We also learn he is slowly losing his mind, an unfortunate side effect of his travels to New York.')
+
+book[0].associations[1].update_attributes(plot: 'After Roland alters history in a way that prevents Jake Chambers from dieing, we find the young boy slowly losing his mind with two sets of memories competing in his mind for the real truth.  With his connection to Roland and Ka driving him, Jake is able to pass through into Mid-World once again and truly becomes part of his group of gunslingers.')
+
+book[0].associations[2].update_attributes(plot: 'In the third book we find Eddie fully recovered from heroin withdrawal.  He has fallen in love and married Susannah and is becoming a powerful gunslinger in his own right.')
+
+book[0].associations[3].update_attributes(plot: 'In this volume we find Susannah a complete mind, a combination of her other two personalities.  She has fallen in love and married Eddie and is becoming a powerful gunslinger in her own right.')
+
+book[0].associations[4].update_attributes(plot: 'Mid-World is greatly expanded in this third volume of the series as we learn about the guardians and the beam.  The latter marks the path that must be followed to find The Dark Tower, eventually leading to the great city of Lud that has descended into chaos.')
+
+book[0].associations[5].update_attributes(plot: 'New York is once again shown as the home of Jake and the other end of a portal he must cross through to regain his sanity.')
+
+book = Book.create([title: 'Needful Things', published_date: Date.parse('1/10/1991'), synopsis: 'A mysterious stranger opens a trinket shop in a small town in Maine where he somehow has the exact item that every customer has always wanted.  However instead of money, the price is always a seemingly harmless prank that in reality increases tensions between the residents, slowly building until the entire town erupts in violence.'])
+
+book[0].repeaters << repeater_d
+book[0].repeaters << repeater_o
+
+book[0].associations[0].update_attributes(plot: 'Castle Rock acts as the setting for this novel about the Devil, temptation, and violence.')
+
+book[0].associations[1].update_attributes(plot: 'In Needful Things, Alan Pangborn is moved into the role of the main protagonist.  As Castle Rock begins to fall apart, Alan must try to keep the peace and eventually confront and stop the owner of the new shop in town before all hell breaks loose.')
+
+
+
+
 
 
 
