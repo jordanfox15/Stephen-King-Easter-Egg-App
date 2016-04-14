@@ -26,16 +26,21 @@ repeater_c = Repeater.create([name: 'Randall Flagg', category: 'character', desc
 
 repeater_e = Repeater.create([name: 'The Shop', category: 'character', description: 'Officially known as the U.S. Department of Scientific Intelligence, this top secret government agency pursues its goals with a disregard for morality or law.'])
 
+repeater_r = Repeater.create([name: 'Topeka, Kansas', category: 'location', description: 'Appearing directly in only one novel, Topeka is on this list because of a relationship between the novels \'The Stand\' and \'The Dark Tower IV\'.'])
+
 book[0].repeaters << repeater_a
 # book[0].repeaters << repeater_b
 book[0].repeaters << repeater_c
 book[0].repeaters << repeater_e
+book[0].repeaters << repeater_r
 
 book[0].associations[0].update_attributes(plot: 'The gathering place and start of a new democratic society called the Free Zone, Boulder is home to the protagonists of the novel.  Led there by visions of Mother Abagail, the city is the foil for the other, less enlightened society in Las Vegas.')
 
 book[0].associations[1].update_attributes(plot: "In his first appearance in the Stephen King universe, Flagg takes on the role of the leader of a new society after the fall of modern civilization.  Located in Las Vegas, Flagg rules with an iron fist, attracting followers drawn to violence and descruction.")
 
 book[0].associations[2].update_attributes(plot: "In The Stand, The Shop was tasked with stopping the superflu viral outbreak before it kills most of humanity, which it completely fails in.")
+
+book[0].associations[3].update_attributes(plot: 'Although not directly important to this novel, the version of Topeka ravaged by the superflu is visited in another.')
 
 book = Book.create([title: 'The Dead Zone', published_date: Date.parse('1/8/1979'), synopsis: 'Upon waking from a five year coma, protagonist John Smith finds he has psychic abilities that lead to an apocalyptic vision of a politicians future.'])
 
@@ -171,6 +176,54 @@ book[0].associations[0].update_attributes(plot: 'Castle Rock acts as the setting
 
 book[0].associations[1].update_attributes(plot: 'In Needful Things, Alan Pangborn is moved into the role of the main protagonist.  As Castle Rock begins to fall apart, Alan must try to keep the peace and eventually confront and stop the owner of the new shop in town before all hell breaks loose.')
 
+book = Book.create([title: 'Gerald\'s Game', published_date: Date.parse('1/5/1992'), synopsis: 'A wife is left trapped, handcuffed in a secluded cabin after her husband dies of a heart attack shortly after securing her to the bed.  As the days pass her situation becomes more and more desperate, especially after she starts receiving visits from a terrifying apparition she is not even sure is real.'])
+
+repeater_p = Repeater.create([name: 'Solar Eclipse of 1963', category: 'location', description: 'This event appears in two successive King novels which, with the small exception of the eclipse a telepathic vision, share no connection.'])
+
+book[0].repeaters << repeater_p
+
+book[0].associations[0].update_attributes(plot: 'In \'Geradld\'s Game\' this eclipse is the backdrop of a repressed memory of the main character who realizes she was molested by her father during it thirty years prior.')
+
+book = Book.create([title: 'Dolores Claiborne', published_date: Date.parse('1/11/1992'), synopsis: 'After an elderly woman dies her housekeeper/caretaker is accused of killing her.  During an interview with the police, the titular character informs them that although she did not kill her employer, she does confess to orchestrating the death of her husband during a solar eclipse 30 years earlier.'])
+
+book[0].repeaters << repeater_p
+
+book[0].associations[0].update_attributes(plot: 'In \'Dolores Claiborne\' the eclipse is the setting for the death of Dolores\' husband thirty years earlier.  Having learned that he had molested their daughter, she formulates a plan and tricks him into falling into an old well during the eclipse.  Dolores also has a vision of Jessie from \'Gerald\'s Game\' sitting on her father\'s lap during the event.')
+
+book = Book.create([title: 'Insomnia', published_date: Date.parse('15/9/1994'), synopsis: 'As two friends begin to sleep less and less each night despite all efforts, they realize there is another plane of existence they are now aware of where they must stop a plot by The Crimson King to orchestrate the death of a boy who is prophesied to be instrumental in defeating him.'])
+
+repeater_q = Repeater.create([name: 'The Crimson King', category: 'character', description: 'The archetypal embodiment of evil in King\'s universe, The Crimson King is the primary antagonist of several of his novels, including \'The Dark Tower\' series.'])
+
+book[0].repeaters << repeater_k
+book[0].repeaters << repeater_q
+
+book[0].associations[0].update_attributes(plot: 'Derry is the setting for \'Insomnia\' and all events that take place in the novel.')
+
+book[0].associations[1].update_attributes(plot: 'In \'Insomnia\', The Crimson King makes his first actual appearance in King\'s universe.  We discover him as the mastermind behind the events the protagonists must prevent in order for a very important young child from being killed.')
+
+book = Book.create([title: 'The Dark Tower IV: Wizard and Glass', published_date: Date.parse('4/11/1997'), synopsis: '\'Wizard and Glass\' takes the readers back in time to tell the story of a young Roland Deschain, sent away by his father for fear of his safety after Roland earns his guns to become the youngest gunslinger ever.  In the company of his closest companions, Roland falls in love for the first and only time and he and his friends must foil the plans of those that serve The Good Man who will eventually cause the downfall of Roland\'s home, Gilead.'])
+
+book[0].repeaters << repeater_g
+book[0].repeaters << repeater_l
+book[0].repeaters << repeater_m
+book[0].repeaters << repeater_h
+book[0].repeaters << repeater_c
+book[0].repeaters << repeater_i
+book[0].repeaters << repeater_r
+
+book[0].associations[0].update_attributes(plot: 'The fourth volume of The Dark Tower Series departs from the current narrative, as we find a fourteen year old Roland having just passed his manhood test to become a gunslinger.  Roland is sent to a far away barony where he meets his first and only love, as well as confronts his first real test as a gunslinger.')
+
+book[0].associations[1].update_attributes(plot: 'Eddie begins this novel by defeating Blaine the Mono in a battle of riddles before it kills him and his ka-tet.  However most of the novel takes place in the distant past with everyone except Roland only reappearing at the very end to confront Marten Broadcloak.')
+
+book[0].associations[2].update_attributes(plot: 'In this volume of the Dark Tower, Susannah appears only at the very beginning and end as the companions take a back seat to the story of a young Roland.')
+
+book[0].associations[3].update_attributes(plot: 'In this volume of the Dark Tower, Jake appears only at the very beginning and end as the companions take a back seat to the story of a young Roland.')
+
+book[0].associations[4].update_attributes(plot: 'Flagg appears in the very end of this novel in the guise of Marten Broadcloak, an adversary from Roland\'s past and one of Flagg\'s many alter egos.')
+
+book[0].associations[5].update_attributes(plot: '')
+
+book[0].associations[6].update_attributes(plot: '')
 
 
 
