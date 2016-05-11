@@ -57,9 +57,9 @@ book = Book.create([title: 'The Dark Tower: The Gunslinger', published_date: Dat
 
 repeater_g = Repeater.create([name: 'Roland Deschain', category: 'character', description: 'The last of the Gunslingers, an ancient group of peace keeping knights from the line of Eld, Roland wields his twin revolvers with preternatural speed and precision, and is single minded in his pursuit of The Dark Tower.'])
 
-repeater_h = Repeater.create([name: 'Jake Chambers', category: 'character', description: 'A young boy of ten or eleven, Jake grew up in Manhattan yet inexplicably finds himself in Mid-World, a companion to the Gunslinger.'])
+repeater_h = Repeater.create([name: 'Jake Chambers', category: 'character', description: 'A young boy of ten or eleven, Jake grew up in Manhattan yet inexplicably finds himself in All-World, a companion to the Gunslinger.'])
 
-repeater_i = Repeater.create([name: 'Mid-World', category: 'location', description: 'The fictional setting of most of the Dark Tower Series and home to protagonist Roland Deschain, Mid-World is seen to be an alternate version of Earth.  Having technology that was once more advanced than our own, \'the world has moved on\' resulting in a devolved society, where civilization can be found at all.  Mid-World is also a place where time and space are constantly in flux.'])
+repeater_i = Repeater.create([name: 'All-World', category: 'location', description: 'The fictional setting of most of the Dark Tower Series and home to protagonist Roland Deschain, All-World is seen to be an alternate version of Earth.  Having technology that was once more advanced than our own, \'the world has moved on\' resulting in a devolved society, where civilization can be found at all.  All-World is split into 3 sections, In-World, Mid-World, and End-World.  All-World is also a place where time and space are constantly in flux.'])
 
 repeater_j = Repeater.create([name: 'New York City', category: 'location', description: 'New York is the origin of several of the characters and an often visited setting in the Dark Tower Series.'])
 
@@ -75,7 +75,7 @@ book[0].associations[1].update_attributes(plot: 'First introduced in this novel,
 
 book[0].associations[2].update_attributes(plot: 'Jake is a young boy, who after an unfortunate event in Manhattan, inexplicably finds himself in the path of the Gunslinger in his trip across the desert.  Becoming, for a time, the first of Roland\'s companions, Jake is both a distraction and a test in Walter\'s attempt to dissuade Roland from continuing his quest for The Dark Tower.')
 
-book[0].associations[3].update_attributes(plot: 'The setting for the entire novel, our first visit to Mid-World is marked by sparse settings and few people where we learn for the first time what this alternate world is like.')
+book[0].associations[3].update_attributes(plot: 'The setting for the entire novel, our first visit to All-World is marked by sparse settings and few people where we learn for the first time what this alternate world is like.')
 
 book[0].associations[4].update_attributes(plot: 'Only mentioned in the story of the origin of Jake Chambers, New York plays a very small role in this novel.')
 
@@ -83,9 +83,14 @@ book = Book.create([title: 'Christine', published_date: Date.parse('29/4/1983'),
 
 book = Book.create([title: 'The Talisman', published_date: Date.parse('8/11/1984'), co_author: 'Peter Straub', synopsis: 'A young boy of 12 sets out on a quest to save his mother by making a cross-country trip from New Hampshire to California.  Along the way he is introduced to \'flipping\', or moving to an alternate dimension known as the Territories where almost everyone and everything is represented in a similar yet altered fashion.'])
 
-book[0].repeaters << repeater_i
+repeater_s = Repeater.create([name: 'Jack Sawyer', category: 'character', description: 'Jack Sawyer is the protagonist of two novels in the Stephen King library.  He is a child in the first, and in the second he ends up working against the Crimson King\'s desire to topple the Dark Tower and end reality as we know it.'])
 
-book[0].associations[0].update_attributes(plot: 'Mentioned only as \'the Territories\', it is only in the sequel \'Black House\' that this alternate universe and Mid-World are revealed to be one in the same.  In this novel \'the Territories\' is a smaller and less technologically advanced version of the United States that the hero travels to and from in his attempt to save his mother.')
+book[0].repeaters << repeater_i
+book[0].repeaters << repeater_s
+
+book[0].associations[0].update_attributes(plot: 'Mentioned only as \'the Territories\', it is only in the sequel \'Black House\' that this alternate universe and All-World are revealed to be one in the same.  In this novel \'the Territories\' is a smaller and less technologically advanced version of the United States that the hero travels to and from in his attempt to save his mother.')
+
+book[0].associations[1].update_attributes(plot: 'As the protagonist of the novel, Jack makes a cross country trip to save his mother while flipping back and forth between our world and the territories.')
 
 book = Book.create([title: 'It', published_date: Date.parse('15/9/1986'), synopsis: 'Told through alternating time periods set approximately 30 years apart, \'It\' tells the story of a group of friends who must discover the truth and then ultimately destroy a demonic shape-shifting entity who murders and devours mostly children in a small town in Maine.'])
 
@@ -97,7 +102,7 @@ book[0].associations[0].update_attributes(plot: 'In the novel \'It\', Derry is t
 
 book = Book.create([title: 'The Dark Tower II: The Drawing of the Three', published_date: Date.parse('1/5/1987'), synopsis: 'After finally catching the Man in Black and meeting with him over a single seemingly endless night, the Gunslinger continues his journey as he visits New York gathering new companions to join him on his quest.'])
 
-repeater_l = Repeater.create([name: 'Eddie Dean', category: 'character', description: 'Beginning as a heroin junkie from Brooklyn in the 80\'s, Eddie Dean becomes a resident of Mid-World and a member of Roland Deschain\'s Ka-tet, where he learns the ways of a gunslinger and joins in the quest for the Dark Tower.'])
+repeater_l = Repeater.create([name: 'Eddie Dean', category: 'character', description: 'Beginning as a heroin junkie from Brooklyn in the 80\'s, Eddie Dean becomes a resident of All-World and a member of Roland Deschain\'s Ka-tet, where he learns the ways of a gunslinger and joins in the quest for the Dark Tower.'])
 
 repeater_m = Repeater.create([name: 'Susannah Dean', category: 'character', description: 'Having lost her legs just above the knee in a subway accident, Susannah suffered from dissociative identity disorder until Roland is able to make her two personalities confront one another and merge into one.  After she is trained as a gunslinger and joins in his quest for the Dark Tower.'])
 
@@ -109,11 +114,11 @@ book[0].repeaters << repeater_m
 
 book[0].associations[0].update_attributes(plot: 'In the second volume of the series, Roland continues his journey for the Dark Tower as he travels along the coast and comes upon three doors as foretold during his meeting with the Man in Black.  Behind each door he encounters a different time period of modern New York City where he must find and help some new companions as well as himself.')
 
-book[0].associations[1].update_attributes(plot: 'In this novel the setting is split between the western coast of Mid-World and New York.  The only thing we see of Mid-World is a long trek down the coast as Roland searches for three doors sitting in mid-air.')
+book[0].associations[1].update_attributes(plot: 'In this novel the setting is split between the western coast of All-World and New York.  The only thing we see of All-World is a long trek down the coast as Roland searches for three doors sitting in mid-air.')
 
-book[0].associations[2].update_attributes(plot: 'The setting for at least half the novel, New York City is the home of three new characters Roland must interact with, each behind a different door acting as a portal from Mid-World.')
+book[0].associations[2].update_attributes(plot: 'The setting for at least half the novel, New York City is the home of three new characters Roland must interact with, each behind a different door acting as a portal from All-World.')
 
-book[0].associations[3].update_attributes(plot: 'In his first appearance in the series, Eddie is a broken down junkie in serious trouble with a group of criminals.  Roland must help Eddie through his problems and draw him into Mid-World where his life changes forever.')
+book[0].associations[3].update_attributes(plot: 'In his first appearance in the series, Eddie is a broken down junkie in serious trouble with a group of criminals.  Roland must help Eddie through his problems and draw him into All-World where his life changes forever.')
 
 book[0].associations[4].update_attributes(plot: 'In her first appearance in the series, Susannah is two different people, Detta and O\'detta.  Roland must force the two personalities to confront each other and merge to become Susannah, at which point she joins him in his quest.')
 
@@ -157,13 +162,13 @@ book[0].repeaters << repeater_j
 
 book[0].associations[0].update_attributes(plot: 'As he and his new companions begin the long journey to The Dark Tower, Roland begins to train Eddie and Susannah to become gunslingers.  We also learn he is slowly losing his mind, an unfortunate side effect of his travels to New York.')
 
-book[0].associations[1].update_attributes(plot: 'After Roland alters history in a way that prevents Jake Chambers from dieing, we find the young boy slowly losing his mind with two sets of memories competing in his mind for the real truth.  With his connection to Roland and Ka driving him, Jake is able to pass through into Mid-World once again and truly becomes part of his group of gunslingers.')
+book[0].associations[1].update_attributes(plot: 'After Roland alters history in a way that prevents Jake Chambers from dieing, we find the young boy slowly losing his mind with two sets of memories competing in his mind for the real truth.  With his connection to Roland and Ka driving him, Jake is able to pass through into All-World once again and truly becomes part of his group of gunslingers.')
 
 book[0].associations[2].update_attributes(plot: 'In the third book we find Eddie fully recovered from heroin withdrawal.  He has fallen in love and married Susannah and is becoming a powerful gunslinger in his own right.')
 
 book[0].associations[3].update_attributes(plot: 'In this volume we find Susannah a complete mind, a combination of her other two personalities.  She has fallen in love and married Eddie and is becoming a powerful gunslinger in her own right.')
 
-book[0].associations[4].update_attributes(plot: 'Mid-World is greatly expanded in this third volume of the series as we learn about the guardians and the beam.  The latter marks the path that must be followed to find The Dark Tower, eventually leading to the great city of Lud that has descended into chaos.')
+book[0].associations[4].update_attributes(plot: 'All-World is greatly expanded in this third volume of the series as we learn about the guardians and the beam.  The latter marks the path that must be followed to find The Dark Tower, eventually leading to the great city of Lud that has descended into chaos.')
 
 book[0].associations[5].update_attributes(plot: 'New York is once again shown as the home of Jake and the other end of a portal he must cross through to regain his sanity.')
 
@@ -221,9 +226,28 @@ book[0].associations[3].update_attributes(plot: 'In this volume of the Dark Towe
 
 book[0].associations[4].update_attributes(plot: 'Flagg appears in the very end of this novel in the guise of Marten Broadcloak, an adversary from Roland\'s past and one of Flagg\'s many alter egos.')
 
-book[0].associations[5].update_attributes(plot: '')
+book[0].associations[5].update_attributes(plot: 'Except at the very beginning and end of the novel, the story takes place in a previously unexplored part of All-World known as Mejis.  It is a coastal barony, far from In-World and Roland\'s home, with the story taking place before the fall of Gilead.')
 
-book[0].associations[6].update_attributes(plot: '')
+book[0].associations[6].update_attributes(plot: 'Although Topeka is not directly visited in \'The Stand\', the version of the city the characters find themselves in is from that universe.  Everything they see is ravaged by the superflu and they find references to both Mother Abigail and Randall Flagg.')
+
+book = Book.create([title: 'Dreamcatcher', published_date: Date.parse('20/3/2001'), synopsis: 'When four lifelong friends go on a camping trip in the woods of Maine, they discover they are trapped in the middle of an alien invasion.  This takes the form an infection in humans and animals alike that eventually kill the host when a lamprey-like being grows in and then exits the body.  The friends must stop the spread as well as deal with a unit of the army following the invasion.'])
+
+book[0].repeaters << repeater_k
+
+book[0].associations[0].update_attributes(plot: 'Derry is the town where the protagonists grow up as well as the nearest populated area to the cabin they go to vacation.')
+
+book = Book.create([title: 'Black House', published_date: Date.parse('15/9/2001'), co_author: 'Peter Straub', synopsis: 'Sequel to the pair\'s earlier novel \'The Talisman\', Black House once again follows protagonist Jack Sawyer who has now grown up to be a retired police detective living in a small Wisconsin town.  He has repressed the memories of his supernatural adventure as a child, but when the local police recruit him to help stop a murderer targeting local children, the investigation leads him back to \'The Territories\' where he must stop the killer who is actually an agent of the Crimson King.'])
+
+book[0].repeaters << repeater_s
+book[0].repeaters << repeater_q
+book[0].repeaters << repeater_i
+
+book[0].associations[0].update_attributes(plot: 'In this novel Jack Sawyer is now an adult who has retired to a small town in Wisconsin after taking early retirement from being a police detective.  Having lost all his memories of his childhood adventure, he rediscovers the territories as he works to stop a serial killer.')
+
+book[0].associations[1].update_attributes(plot: 'Not making a personal appearance in this novel, The Crimson King is only mentioned as the force behind the entity that is the antagonist of the story.')
+
+book[0].associations[2].update_attributes(plot: 'As in the prequel, Jack Sawyer travels back and forth to \'The Territories\', which in this novel is revealed to be part of All-World.')
+
 
 
 
